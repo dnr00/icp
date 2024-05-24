@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "uksang_icp_backend": {
+      "build": "npx azle uksang_icp_backend",
+      "candid": "src/uksang_icp_backend/uksang_icp_backend.did",
+      "gzip": true,
+      "main": "src/uksang_icp_backend/src/index.ts",
+      "type": "custom",
+      "wasm": ".azle/uksang_icp_backend/uksang_icp_backend.wasm"
+    },
+    "uksang_icp_frontend": {
+      "dependencies": [
+        "uksang_icp_backend"
+      ],
+      "source": [
+        "src/uksang_icp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "uksang_icp_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
